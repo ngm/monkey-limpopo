@@ -24,6 +24,7 @@
 
 /* RESOLUTION SPECIFIC STYLES - 960px X 540px */
 /* Application in Center-Middle of Screen (achieved by positioning 50% down from top AND shifting back up to origin by half height) */
+
 #app {
     position: relative;
     overflow: hidden;
@@ -145,6 +146,23 @@
     background-image: url(../../img/life.png);
     padding: 0px;
     margin: 10px 6px;
+}
+
+.hue {
+    position: absolute;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color:green;
+    padding: 0px;
+    margin: 10px 6px;
+    z-index:2000;
+}
+.red {
+    background-color:red;
+}
+.green {
+    background-color:green;
 }
 
 .life.dead {

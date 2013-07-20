@@ -31,9 +31,10 @@ require.def('sampleapp/appui/sampleapp',
         'sampleapp/appui/components/lifemanager',
         'sampleapp/appui/components/dialog',
         'sampleapp/appui/components/time',
-        'sampleapp/appui/components/progresspoller'
+        'sampleapp/appui/components/progresspoller',
+        'sampleapp/appui/components/hue'
     ],
-    function(Application, Container, Character, Road, LifeManager, Dialog, Time, ProgressPoller) {
+    function(Application, Container, Character, Road, LifeManager, Dialog, Time, ProgressPoller, Hue) {
     
         return Application.extend({
             init: function(appDiv, styleDir, imgDir, callback) {
@@ -81,6 +82,9 @@ require.def('sampleapp/appui/sampleapp',
                 var lifeManager = new LifeManager(dialog, character, time);
                 rootWidget.appendChildWidget(lifeManager);
 
+                var hue = new Hue();
+                rootWidget.appendChildWidget(hue);
+
                 var onWinDetected = function () {
                     time.stopTime();
                     dialog.showGameWin(function () {
@@ -91,10 +95,12 @@ require.def('sampleapp/appui/sampleapp',
                 var onCollisionDetected = function () {
                     lifeManager.removeLife();
                     character.die();
+                    hue.goRed();
                     
                     setTimeout(function() {
                         character.moveToStartPosition();
                         character.resurrect();
+                        hue.goGreen();
                         progressPoller.start();
                     }, 1000);
                 };
