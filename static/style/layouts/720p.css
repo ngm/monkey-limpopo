@@ -1,0 +1,256 @@
+/**
+ * @preserve Copyright (c) 2013 British Broadcasting Corporation
+ * (http://www.bbc.co.uk) and TAL Contributors (1)
+ *
+ * (1) TAL Contributors are listed in the AUTHORS file and at
+ *     https://github.com/fmtvp/TAL/AUTHORS - please extend this file,
+ *     not this notice.
+ *
+ * @license Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * All rights reserved
+ * Please contact us for an alternative licence
+ */
+
+/* RESOLUTION SPECIFIC STYLES - 1280px X 720px */
+/* Application in Center-Middle of Screen (achieved by positioning 50% down from top AND shifting back up to origin by half height) */
+#app {
+    position: relative;
+    overflow: hidden;
+    width: 1280px;
+    height: 720px;
+    top: 50%;
+    margin: -360px auto 0 auto;
+}
+
+#character {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-image: url(../../img/frog.png);
+    padding: 0px;
+    margin: 0px;
+}
+
+#character.jumping {
+    background-image: url(../../img/frogjumping.png);
+}
+
+#character.dead {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-image: url(../../img/splat.png);
+    padding: 0px;
+    margin: 0px;
+}
+
+#road {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+}
+
+.car {
+    position: absolute;
+    z-index: 10;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 80px;
+}
+
+.redcar {
+    height: 50px;
+    width: 101px;
+}
+
+.redcar.left {
+    background-image: url('../../img/cars/redcar-left.png');
+}
+
+.redcar.right {
+    background-image: url('../../img/cars/redcar-right.png');
+}
+
+.bluecar {
+    height: 50px;
+    width: 115px;
+}
+
+.bluecar.left {
+    background-image: url('../../img/cars/bluecar-left.png');
+}
+
+.bluecar.right {
+    background-image: url('../../img/cars/bluecar-right.png');
+}
+
+.yellowcar {
+	height: 45px;
+    width: 99px;
+}
+
+.yellowcar.left {
+    background-image: url('../../img/cars/yellowcar-left.png');
+}
+
+.yellowcar.right {
+    background-image: url('../../img/cars/yellowcar-right.png');
+}
+
+.fireengine {
+	height: 70px;
+    width: 159px;
+}
+
+.fireengine.left {
+    background-image: url('../../img/cars/fireengine-left.png');
+}
+
+.fireengine.right {
+    background-image: url('../../img/cars/fireengine-right.png');
+}
+
+.bulldozer {
+	height: 70px;
+    width: 105px;
+}
+
+.bulldozer.left {
+    background-image: url('../../img/cars/bulldozer-left.png');
+}
+
+.bulldozer.right {
+    background-image: url('../../img/cars/bulldozer-right.png');
+}
+
+.lane {
+    position: relative;
+    top: 0;
+    height: 53px;
+    padding: 21px 0px;
+}
+
+.evenLane {
+    background-color: gray;
+}
+
+.oddLane {
+    background-color: darkgray;
+}
+
+#lives {
+    position: absolute;
+    height: 60px;
+    width: 160px;
+    top: 584px;
+    left: 20px;
+    padding: 0px;
+    margin: 0px;
+    background-color: gray;
+    border: 1px solid darkgray;
+    z-index: 10;
+}
+
+.life {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-image: url(../../img/life.png);
+    padding: 0px;
+    margin: 10px 6px;
+}
+
+.life.dead {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    background: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#startRegion {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 575px;
+    background-image: url(../../img/grass.png);
+}
+
+#endRegion {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 20px;
+    background-image: url(../../img/grass.png);
+}
+#dialog {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background-color: cadetblue;
+    z-index: 11;
+}
+.hidden {
+     visibility: hidden;
+ }
+
+.playAgain {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    height: 8%;
+    width: 60%;
+    background-color: darkblue;
+    padding: 0px;
+    margin: 0px;
+}
+.playLabel {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+.gameOverLabel {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    color: white;
+    font-size: 46pt;
+    padding: 0px;
+    margin: 0px;
+}
+.gameWinLabel {
+    position: absolute;
+    top: 20%;
+    left: 27%;
+    color: white;
+    font-size: 46pt;
+    padding: 0px;
+    margin: 0px;
+}
+.timeDisplay {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    color: white;
+    font-size: 46pt;
+    padding: 0px;
+    margin: 0px;
+}
